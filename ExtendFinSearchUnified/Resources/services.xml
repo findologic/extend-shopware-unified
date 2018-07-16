@@ -5,10 +5,10 @@
     <services>
         <service id="extend_fin_search_unified.article_model_factory" class="ExtendFinSearchUnified\BusinessLogic\FindologicArticleFactory" decorates="fin_search_unified.article_model_factory">
         </service>
-        <service id="extend_fin_search_unified.product_number_search" class="ExtendFinSearchUnified\Bundles\ProductNumberSearch" decorates="FinSearchUnified.product_number_search">
-            <argument type="service" id="fin_search_unified_es.product_number_search.inner"/>
+        <service id="extend_fin_search_unified.product_number_search" class="ExtendFinSearchUnified\Bundles\ProductNumberSearch" decorates="fin_search_unified.product_number_search">
+            <argument type="service" id="fin_search_unified.product_number_search.inner"/>
         </service>
-        <service id="extend_fin_search_unified_es.product_number_search" class="ExtendFinSearchUnified\Bundles\ProductNumberSearch" decorates="FinSearchUnified.product_number_search">
+        <service id="extend_fin_search_unified_es.product_number_search" class="ExtendFinSearchUnified\Bundles\ProductNumberSearch" decorates="fin_search_unified_es.product_number_search">
             <argument type="service" id="fin_search_unified_es.product_number_search.inner"/>
         </service>
     </services>
