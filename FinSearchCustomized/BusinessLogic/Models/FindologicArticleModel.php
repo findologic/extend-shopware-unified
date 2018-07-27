@@ -1,6 +1,6 @@
 <?php
 
-namespace ExtendFinSearchUnified\BusinessLogic\Models;
+namespace FinSearchCustomized\BusinessLogic\Models;
 
 use FinSearchUnified\BusinessLogic\Models\FindologicArticleModel as OriginalFindologicArticleModel;
 use Shopware\Models\Article\Article;
