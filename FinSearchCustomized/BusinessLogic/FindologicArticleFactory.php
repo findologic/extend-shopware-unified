@@ -1,8 +1,8 @@
 <?php
 
-namespace ExtendFinSearchUnified\BusinessLogic;
+namespace FinSearchCustomized\BusinessLogic;
 
-use ExtendFinSearchUnified\BusinessLogic\Models\FindologicArticleModel;
+use FinSearchCustomized\BusinessLogic\Models\FindologicArticleModel;
 use Shopware\Models\Article\Article;
 use Shopware\Models\Category\Category;
 

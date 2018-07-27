@@ -3,12 +3,12 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="extend_fin_search_unified.article_model_factory" class="ExtendFinSearchUnified\BusinessLogic\FindologicArticleFactory" decorates="fin_search_unified.article_model_factory">
+        <service id="extend_fin_search_unified.article_model_factory" class="FinSearchCustomized\BusinessLogic\FindologicArticleFactory" decorates="fin_search_unified.article_model_factory">
         </service>
-        <service id="extend_fin_search_unified.product_number_search" class="ExtendFinSearchUnified\Bundles\ProductNumberSearch" decorates="fin_search_unified.product_number_search">
+        <service id="extend_fin_search_unified.product_number_search" class="FinSearchCustomized\Bundles\ProductNumberSearch" decorates="fin_search_unified.product_number_search">
             <argument type="service" id="fin_search_unified.product_number_search.inner"/>
         </service>
-        <service id="extend_fin_search_unified_es.product_number_search" class="ExtendFinSearchUnified\Bundles\ProductNumberSearch" decorates="fin_search_unified_es.product_number_search">
+        <service id="extend_fin_search_unified_es.product_number_search" class="FinSearchCustomized\Bundles\ProductNumberSearch" decorates="fin_search_unified_es.product_number_search">
             <argument type="service" id="fin_search_unified_es.product_number_search.inner"/>
         </service>
     </services>
