@@ -1,6 +1,6 @@
 <?php
 
-namespace FinSearchCustomized\Bundles;
+namespace ExtendFinSearchUnified\Bundles;
 
 use FinSearchUnified\Bundles\ProductNumberSearch as OriginalProductNumberSearch;
 use Shopware\Bundle\SearchBundle\Criteria;
