@@ -1,4 +1,4 @@
-# FINDOLOGIC Shopware Plugin Override
+# FINDOLOGIC Shopware 5 Plugin Override
 This is a basic plugin skeleton which may be used to customize
 [FINDOLOGIC's Shopware 5 plugin](https://store.shopware.com/fin1848466805161f/findologic-suche-unified.html).
 
