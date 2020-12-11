@@ -53,6 +53,7 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
     }
 
     /*
+     * Direct Integration only:
      * Example on how to add a property with all variants as a JSON.
      * Each variant includes the corresponding URL and assigned images.
      */
