@@ -15,7 +15,7 @@ use Shopware\Models\Media\Media;
 
 class FindologicArticleModel extends OriginalFindologicArticleModel
 {
-    // The variant column the variants should be differentiated by
+    // The variant column that differentiates the different variants
     const VARIANT_TYPE = 'Farbe';
 
     const URL_REPLACEMENTS = [
@@ -24,7 +24,7 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
     ];
 
     /**
-     * @var MediaService
+     * @var MediaService|null
      */
     protected $mediaService;
 
@@ -56,6 +56,24 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
      * Direct Integration only:
      * Example on how to add a property with all variants as a JSON.
      * Each variant includes the corresponding URL and assigned images.
+     *
+     * Example:
+     * {
+     *   "red": {
+     *     "productUrl": "https://www.example.com/de/jacket?number=SW10000-01",
+     *     "images": [
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-red-01.jpg",
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-red-02.jpg",
+     *     ],
+     *   },
+     *   "black": {
+     *     "productUrl": "https://www.example.com/de/jacket?number=SW10000-02",
+     *     "images": [
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-black-01.jpg",
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-black-02.jpg",
+     *     ],
+     *   }
+     * }
      */
     protected function addVariantsJson()
     {
@@ -70,7 +88,6 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
                 continue;
             }
 
-            // Get size and color values
             foreach ($variant->getConfiguratorOptions() as $option) {
                 if (StaticHelper::isEmpty($option->getName()) ||
                     StaticHelper::isEmpty($option->getGroup()->getName())
