@@ -120,14 +120,16 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
         return [
             'productUrl' => $this->getUrlByVariant($variant),
             'images' => $this->getVariantImages($variant),
+            'thumbnails' => $this->getVariantImages($variant, true),
         ];
     }
 
     /**
      * @param Detail $variant
+     * @param boolean $getThumbnail
      * @return string[]
      */
-    protected function getVariantImages($variant)
+    protected function getVariantImages($variant, $getThumbnail = false)
     {
         $images = [];
 
@@ -137,7 +139,7 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
                 continue;
             }
 
-            $imageUrl = $this->getImageUrlByImage($image->getParent());
+            $imageUrl = $this->getImageUrlByImage($image->getParent(), $getThumbnail);
             if ($imageUrl) {
                 $images[$image->getPosition()] = $imageUrl;
             }
@@ -148,9 +150,10 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
 
     /**
      * @param Image $image
+     * @param boolean $getThumbnail
      * @return string|null
      */
-    protected function getImageUrlByImage($image)
+    protected function getImageUrlByImage($image, $getThumbnail = false)
     {
         /** @var Image $imageRaw */
         $imageRaw = $image->getMedia();
@@ -167,7 +170,9 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
         }
 
         if (count($imageDetails) > 0) {
-            return strtr($this->mediaService->getUrl($imageDefault), self::URL_REPLACEMENTS);
+            return $getThumbnail
+                ? strtr($this->mediaService->getUrl(array_values($imageDetails)[0]), self::URL_REPLACEMENTS)
+                : strtr($this->mediaService->getUrl($imageDefault), self::URL_REPLACEMENTS);
         }
 
         return null;
