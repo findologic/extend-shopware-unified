@@ -65,12 +65,20 @@ class FindologicArticleModel extends OriginalFindologicArticleModel
      *       "https://www.example.com/media/image/73/bc/ef/jacket-red-01.jpg",
      *       "https://www.example.com/media/image/73/bc/ef/jacket-red-02.jpg",
      *     ],
+     *     "thumbnails": [
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-red-01_200x200.jpg",
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-red-02_200x200.jpg",
+     *     ],
      *   },
      *   "black": {
      *     "productUrl": "https://www.example.com/de/jacket?number=SW10000-02",
      *     "images": [
      *       "https://www.example.com/media/image/73/bc/ef/jacket-black-01.jpg",
      *       "https://www.example.com/media/image/73/bc/ef/jacket-black-02.jpg",
+     *     ],
+     *     "thumbnails": [
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-black-01_200x200.jpg",
+     *       "https://www.example.com/media/image/73/bc/ef/jacket-black-02_200x200.jpg",
      *     ],
      *   }
      * }
